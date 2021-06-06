@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="container">
     <h1>What to do?</h1>
     <ul>
       <li v-for="todo in todos">
@@ -13,7 +13,7 @@
 
 <script>
 export default {
-  name: "Todos",
+  name: "List",
   props: {
     todos: {
       type: Array
@@ -27,7 +27,7 @@ export default {
 
 <style scoped>
 .container {
-  width: 45%;
+  width: 20%;
   margin: 0 auto;
   text-align: left;
 }

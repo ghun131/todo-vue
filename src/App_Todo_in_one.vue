@@ -19,8 +19,6 @@
 </template>
 
 <script>
-// import Input from './components/Input'
-// import Todos from './components/Todos'
 
 export default {
   name: "App",

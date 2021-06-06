@@ -11,35 +11,36 @@
     >
       <div
         v-for="tab in tabs"
-        :style="currentRoute === tab ? { color: 'blue' } : ''"
-        v-on:click="handleChangeRoute(tab)"
+        :style="currentTab === tab ? { color: 'blue' } : ''"
+        v-on:click="currentTab = tab"
       >
         {{ tab }}
       </div>
     </div>
-    <br>
-    <br>
 
-    <router-view />
+    <br />
+    <br />
+    <br />
+
+    <component :is="currentTab"></component>
   </div>
 </template>
 
 <script>
+import Todos from "./components/todos/Todos";
+import Counter from "./components/counter/Counter";
+
 export default {
+  name: "App",
+  components: {
+    Todos,
+    Counter
+  },
   data() {
     return {
-      tabs: ["todos", "counter"]
+      currentTab: "Todos",
+      tabs: ["Todos", "Counter"]
     };
-  },
-  methods: {
-    handleChangeRoute(route) {
-      this.$router.push({ path: route });
-    }
-  },
-  computed: {
-    currentRoute() {
-      return this.$route.name;
-    }
   }
 };
 </script>
@@ -52,5 +53,11 @@ export default {
   text-align: center;
   color: #2c3e50;
   margin-top: 60px;
+}
+
+.container {
+  width: 45%;
+  margin: 0 auto;
+  text-align: left;
 }
 </style>

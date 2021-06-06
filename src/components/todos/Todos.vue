@@ -1,6 +1,6 @@
 <template>
   <div>
-    <Form v-on:add-todo="handleAdd" :todos="todos" />
+    <Form v-on:add-todo="handleAdd" event-type="add-todo">Add</Form>
 
     <List :todos="todos" :handle-remove="handleRemove" />
   </div>
@@ -8,7 +8,8 @@
 
 <script>
 import List from "./List";
-import Form from "./Form";
+// import Form from "./Form";
+import Form from "../Form";
 
 export default {
   name: "Todos",

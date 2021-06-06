@@ -6,7 +6,7 @@ Vue.use(Vuex);
 export default new Vuex.Store({
     state: {
         counter: 0,
-        todos: ["placeholder"]
+        size: 60,
     },
     mutations: {
         increment(state) {
@@ -15,14 +15,16 @@ export default new Vuex.Store({
         decrement(state) {
             state.counter -= 1;
         },
-        add(state, todo) {
-            console.log('HIT');
-            
-            state.todos.push(todo);
+        shrink(state, value) {
+            state.size -= value;
         },
-        remove(state, currTodo) {
-            const newTodos = state.todos.filter(todo => currTodo !== todo);
-            state.todos = newTodos;
+        restore(state) {
+            state.size = 60;
+        }
+    },
+    actions: {
+        shrinkAction({ commit }) {
+            commit('shrink', 20);
         }
     }
 })

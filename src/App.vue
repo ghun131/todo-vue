@@ -3,7 +3,7 @@
     <div
       :style="{
         display: 'flex',
-        width: '130px',
+        width: '170px',
         margin: '0 auto',
         justifyContent: 'space-between',
         cursor: 'pointer'
@@ -28,7 +28,7 @@
 export default {
   data() {
     return {
-      tabs: ["todos", "counter"]
+      tabs: ["todos", "counter", "echo"]
     };
   },
   methods: {
